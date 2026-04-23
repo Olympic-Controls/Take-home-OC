@@ -5,6 +5,7 @@ Goal
 Build a simple dashboard editor where users can add and arrange chart widgets. Focus on clarity, interaction quality, and code structure over feature depth.
 
 ⸻
+
 Getting Started
    1. Fork the Repository.
    2. Clone the Repo: Clone your forked repo to your local machine.
