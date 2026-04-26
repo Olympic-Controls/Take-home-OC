@@ -49,3 +49,16 @@ export const DATASETS: Record<string, { label: string; data: DataPoint[] }> = {
     ],
   },
 };
+
+const datasetKeys = Object.keys(DATASETS);
+let datasetIndex = 0;
+
+export function getNextDatasetKey(): string {
+  const key = datasetKeys[datasetIndex % datasetKeys.length];
+  datasetIndex++;
+  return key;
+}
+
+export function resetDatasetIndex(): void {
+  datasetIndex = 0;
+}
