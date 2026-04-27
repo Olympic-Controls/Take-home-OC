@@ -202,5 +202,6 @@ Each widget is wrapped in its own `ErrorBoundary`. A broken chart shows a fallba
 - **Undo/redo** — Zustand's `temporal` middleware or a simple state history stack
 - **Data source selector** — let users pick which dataset each widget displays
 - **Animation on add/remove** — `framer-motion` `AnimatePresence` for smooth enter/exit
+- **Chart responsiveness on mobile** — improve chart sizing, axis label truncation, and layout alignment on small screens
 - **E2E tests** — Playwright for drag-and-drop interactions
 - **Dark mode** — Tailwind v4's `@custom-variant` makes this straightforward
