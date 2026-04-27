@@ -8,6 +8,7 @@ import type {
 import BarChartWidget from "./components/charts/BarChartWidget";
 import { BarChart3, TrendingUp } from "lucide-react";
 import LineChartWidget from "./components/charts/LineChartWidget";
+
 export type WidgetRegistryEntry = {
   component: ComponentType<{
     data: DataPoint[];
