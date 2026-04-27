@@ -1,5 +1,3 @@
-import type { Layout } from "react-grid-layout";
-
 export type ChartType = "bar" | "line";
 
 export type DataPoint = {
@@ -27,8 +25,6 @@ export type Widget = BarWidget | LineWidget;
 export type WidgetConfig<T extends ChartType> = T extends "bar"
   ? BarChartConfig
   : LineChartConfig;
-
-export type ReactGridLayouts = { [breakpoint: string]: Layout };
 
 export type ChartPosition = {
   x: number;

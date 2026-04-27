@@ -1,23 +1,19 @@
 import { create } from "zustand";
 import { getNextDatasetKey } from "../mockData";
-import type {
-  ChartPosition,
-  ChartType,
-  ReactGridLayouts,
-  Widget,
-} from "../types";
+import type { ChartPosition, ChartType, Widget } from "../types";
 import { WIDGET_REGISTRY } from "../widgetRegistry";
 import { persist } from "zustand/middleware";
+import type { ResponsiveLayouts } from "react-grid-layout";
 
 type DashboardState = {
   widgets: Record<string, Widget>;
   widgetIds: string[];
-  layouts: ReactGridLayouts;
+  layouts: ResponsiveLayouts;
 
   addWidget: (type: ChartType, position?: ChartPosition) => void;
   removeWidget: (id: string) => void;
   updateWidgetTitle: (id: string, title: string) => void;
-  updateLayouts: (layouts: ReactGridLayouts) => void;
+  updateLayouts: (layouts: ResponsiveLayouts) => void;
   clearDashboard: () => void;
 };
 
@@ -64,9 +60,9 @@ export const useDashboardStore = create<DashboardState>()(
         set((state) => {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { [id]: _, ...remainingWidgets } = state.widgets;
-          const layouts: ReactGridLayouts = {};
+          const layouts: ResponsiveLayouts = {};
           for (const [bp, bpLayouts] of Object.entries(state.layouts)) {
-            layouts[bp] = bpLayouts.filter((l) => l.i !== id);
+            layouts[bp] = bpLayouts?.filter((l) => l.i !== id);
           }
           return {
             widgets: remainingWidgets,
